@@ -32,6 +32,8 @@ Start Flow → Your Known Data → Fetch LinkedIn Profile (PDL) → Compare Data
 
 > **Get a PDL API key:** Sign up at [peopledatalabs.com](https://www.peopledatalabs.com/) — they offer free credits to get started.
 
+TestKey: 4479aba87965e1ef0d7f5ec62cef7d4588cfd5918e8808208e566b9e992f901a
+
 ### Step 3: Enter Your Known Data
 
 1. Click on the **"Your Known Data"** node (the Set node)
