@@ -43,7 +43,7 @@ In diesem Workshop bauen Sie Schritt für Schritt ein Claude-Projekt auf, das al
 4. Benennen Sie das Projekt, z.B. **«Personen-Dossier»**
 5. Sie sehen nun zwei Bereiche:
    - **Custom Instructions** (oben) – hier kommt die Anweisung rein
-   - **Project Knowledge** (unten) – hier laden Sie später Dateien hoch
+   - **Files** (unten) – hier laden Sie später Dateien hoch
 
 ---
 
