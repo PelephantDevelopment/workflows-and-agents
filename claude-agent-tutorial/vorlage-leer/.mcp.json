@@ -1,0 +1,26 @@
+{
+  "_ANLEITUNG": [
+    "Diese Datei verbindet deinen Agent mit externen Diensten.",
+    "Du brauchst sie NUR wenn dein Agent auf externe Tools zugreifen soll.",
+    "Lösche diese Datei komplett wenn du keine Connectors brauchst.",
+    "",
+    "Connectors werden in der Claude Desktop App eingerichtet:",
+    "Settings → Connectors → Dienst auswählen → Anmelden",
+    "",
+    "Verfügbare Connectors (Stand März 2026):",
+    "- Google Drive    (Dateien lesen/schreiben)",
+    "- Gmail           (E-Mails lesen/senden)",
+    "- Google Calendar  (Termine lesen/erstellen)",
+    "- Slack           (Nachrichten lesen/senden)",
+    "- Notion          (Seiten lesen/erstellen)",
+    "- Microsoft 365   (Outlook, SharePoint, OneDrive)",
+    "- Asana           (Tasks lesen/erstellen)",
+    "- Linear          (Issues lesen/erstellen)",
+    "- Jira            (Tickets lesen/erstellen)",
+    "- DocuSign        (Dokumente signieren)",
+    "- und weitere...",
+    "",
+    "TIPP: Die Connectors in dieser Datei müssen mit den",
+    "Connectors übereinstimmen, die du in der App eingerichtet hast."
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "HIER-PLUGIN-NAME",
+  "description": "HIER ANPASSEN: Was tut dein Agent? (1-2 Sätze)",
+  "version": "1.0.0",
+  "author": {
+    "name": "HIER DEIN NAME"
+  }
+}

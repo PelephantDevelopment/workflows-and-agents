@@ -1,0 +1,8 @@
+{
+  "name": "vertragsanalyse-agent",
+  "description": "Analysiert Verträge auf Risiken, fehlende Klauseln und Abweichungen vom Standard. Erstellt eine strukturierte Risikoübersicht und eine Management-Zusammenfassung. Kann Rechtsgrundlagen recherchieren und Verbesserungsvorschläge machen.",
+  "version": "1.0.0",
+  "author": {
+    "name": "EIZ Legaltech Workshop"
+  }
+}

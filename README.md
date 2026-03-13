@@ -28,6 +28,8 @@ Workshop for building a Claude Cowork agent that automatically sorts 50+ files b
 **Type:** Claude Cowork agent workshop
 **Features:** Content analysis → Auto-categorization → File renaming → Inventory generation → Scheduled execution
 
----
+### 5. [Claude Agent: Tutorial](./claude-agent-tutorial/)
+Self-paced course for building custom Claude Cowork agents from scratch. Learn agent architecture, skills, sub-agents, and commands. Includes contract analysis example and empty template for your own use case.
 
-More use cases coming soon.
+**Type:** Claude Cowork agent tutorial
+**Features:** 4-step course → Agent architecture → Working example → Empty template
