@@ -22,6 +22,12 @@ Workshop material for creating Claude Projects that research people and generate
 **Type:** Claude Projects workshop
 **Features:** Web research → Structured dossier → PowerPoint generation → Corporate design
 
+### 4. [Claude Agent: File Organizer](./claude-agent-file-organizer/)
+Workshop for building a Claude Cowork agent that automatically sorts 50+ files by content. Includes skills, sub-agents, and scheduled tasks. Reads file content, categorizes documents, renames files, and creates inventory lists.
+
+**Type:** Claude Cowork agent workshop
+**Features:** Content analysis → Auto-categorization → File renaming → Inventory generation → Scheduled execution
+
 ---
 
 More use cases coming soon.

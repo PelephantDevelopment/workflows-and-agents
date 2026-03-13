@@ -1,0 +1,8 @@
+{
+  "name": "ordner-aufraeumen",
+  "description": "Sortiert Dateien in einem Ordner automatisch nach Inhalt in juristische Kategorien (Verträge, Urteile, Fachartikel, Korrespondenz, Rechnungen, Präsentationen etc.), benennt sie einheitlich um und erstellt eine Inventarliste. Enthält einen Recherche-Agenten für unklare Dokumente.",
+  "version": "1.0.0",
+  "author": {
+    "name": "EIZ Legaltech Workshop"
+  }
+}
