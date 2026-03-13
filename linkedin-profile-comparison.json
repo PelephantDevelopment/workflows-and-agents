@@ -1,0 +1,165 @@
+{
+  "name": "LinkedIn Profile Comparison",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a1b2c3d4-0001-4000-8000-000000000001",
+      "name": "Start Flow",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "field-linkedin-url",
+              "name": "linkedin_url",
+              "value": "https://ch.linkedin.com/in/ramona-schindler",
+              "type": "string"
+            },
+            {
+              "id": "field-known-name",
+              "name": "known_name",
+              "value": "Ramona Schindler",
+              "type": "string"
+            },
+            {
+              "id": "field-known-position",
+              "name": "known_position",
+              "value": "Managing Director",
+              "type": "string"
+            },
+            {
+              "id": "field-known-company",
+              "name": "known_company",
+              "value": "Example Advisory Group",
+              "type": "string"
+            },
+            {
+              "id": "field-known-location",
+              "name": "known_location",
+              "value": "Zurich, Switzerland",
+              "type": "string"
+            },
+            {
+              "id": "field-known-industry",
+              "name": "known_industry",
+              "value": "Management Consulting",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1b2c3d4-0002-4000-8000-000000000002",
+      "name": "Your Known Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [480, 300],
+      "notesInFlow": true,
+      "notes": "Edit these fields with the person's LinkedIn URL and the information you already have about them."
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.peopledatalabs.com/v5/person/enrich",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "api_key",
+              "value": "YOUR_PDL_API_KEY"
+            },
+            {
+              "name": "profile",
+              "value": "={{ $json.linkedin_url }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "a1b2c3d4-0003-4000-8000-000000000003",
+      "name": "Fetch LinkedIn Profile (PDL)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [740, 300],
+      "notesInFlow": true,
+      "notes": "Calls the People Data Labs API to enrich the LinkedIn profile. Replace YOUR_PDL_API_KEY with your actual key."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Get data from both previous nodes\nconst knownData = $node[\"Your Known Data\"].first().json;\nconst pdlResponse = $input.first().json;\n\n// Extract fetched profile data from PDL response\nconst fetched_name = pdlResponse.full_name || pdlResponse.name || 'Not found';\nconst fetched_position = pdlResponse.job_title || 'Not found';\nconst fetched_company = pdlResponse.job_company_name || 'Not found';\nconst fetched_location = pdlResponse.location_name || 'Not found';\nconst fetched_industry = pdlResponse.industry || 'Not found';\n\n// Helper: compare two strings (case-insensitive, partial match)\nfunction compare(known, fetched) {\n  if (!known || !fetched || fetched === 'Not found') {\n    return { match: false, note: 'Data missing' };\n  }\n  const k = known.toLowerCase().trim();\n  const f = fetched.toLowerCase().trim();\n  if (k === f) {\n    return { match: true, note: 'Exact match' };\n  }\n  if (f.includes(k) || k.includes(f)) {\n    return { match: true, note: 'Partial match' };\n  }\n  return { match: false, note: 'Different' };\n}\n\n// Run comparisons\nconst nameCheck = compare(knownData.known_name, fetched_name);\nconst positionCheck = compare(knownData.known_position, fetched_position);\nconst companyCheck = compare(knownData.known_company, fetched_company);\nconst locationCheck = compare(knownData.known_location, fetched_location);\nconst industryCheck = compare(knownData.known_industry, fetched_industry);\n\n// Count matches\nconst fields = [nameCheck, positionCheck, companyCheck, locationCheck, industryCheck];\nconst matchCount = fields.filter(f => f.match).length;\n\nreturn [\n  {\n    json: {\n      summary: `${matchCount} of 5 fields match`,\n      linkedin_url: knownData.linkedin_url,\n      comparison: {\n        name: {\n          known: knownData.known_name,\n          fetched: fetched_name,\n          result: nameCheck.note\n        },\n        position: {\n          known: knownData.known_position,\n          fetched: fetched_position,\n          result: positionCheck.note\n        },\n        company: {\n          known: knownData.known_company,\n          fetched: fetched_company,\n          result: companyCheck.note\n        },\n        location: {\n          known: knownData.known_location,\n          fetched: fetched_location,\n          result: locationCheck.note\n        },\n        industry: {\n          known: knownData.known_industry,\n          fetched: fetched_industry,\n          result: industryCheck.note\n        }\n      },\n      match_count: matchCount,\n      total_fields: 5\n    }\n  }\n];"
+      },
+      "id": "a1b2c3d4-0004-4000-8000-000000000004",
+      "name": "Compare Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1020, 300],
+      "notesInFlow": true,
+      "notes": "Compares your known data with the fetched LinkedIn data and shows which fields match."
+    }
+  ],
+  "connections": {
+    "Start Flow": {
+      "main": [
+        [
+          {
+            "node": "Your Known Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Your Known Data": {
+      "main": [
+        [
+          {
+            "node": "Fetch LinkedIn Profile (PDL)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch LinkedIn Profile (PDL)": {
+      "main": [
+        [
+          {
+            "node": "Compare Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "pelephant-linkedin-comparison"
+  },
+  "tags": [
+    {
+      "name": "LinkedIn",
+      "id": "1"
+    },
+    {
+      "name": "Demo",
+      "id": "2"
+    }
+  ]
+}
