@@ -1,4 +1,4 @@
-# Eigenen KI-Agent bauen – Selbstlernkurs
+# Eigenen KI-Agent bauen 
 
 > **Dauer:** ca. 45 Minuten (im eigenen Tempo)  
 > **Für wen:** Juristinnen und Juristen – keine technischen Vorkenntnisse nötig  
@@ -9,7 +9,6 @@
 
 ## Worum geht es?
 
-Du kennst Claude wahrscheinlich aus dem Chat – du stellst eine Frage, Claude antwortet. In diesem Kurs lernst du etwas Neues: Wie du Claude in einen **Spezialisten** verwandelst.
 
 Stell dir vor, du hättest einen neuen Praktikanten. Du gibst ihm ein Handbuch: «Wenn ein Vertrag reinkommt, prüfe diese 14 Punkte, recherchiere die Rechtsgrundlagen und schreibe eine Zusammenfassung.» Genau das ist ein Agent – ein Handbuch für Claude, das du einmal schreibst und immer wieder nutzen kannst.
 
