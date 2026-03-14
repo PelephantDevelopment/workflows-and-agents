@@ -1,3 +1,37 @@
+
+# Schritt 4_0: Prework - Probleme selber lösen.
+> **Dauer:** ca. 15 Minuten  
+> **Was du brauchst:** den Ordner `vorlage-leer/` aus diesem Repo als .zip Datei 
+> **Was du am Ende hast:** Einen Weg gefunden, technische Probleme selber zu lösen.
+>
+> ## Was wir jetzt tun
+>
+> ## Schritt 4_0a: Plugin installieren
+
+Jetzt wird es ernst – du installierst deinen Agent in Cowork:
+
+1. Öffne die **Claude Desktop App**
+2. Wechsle zum Tab **«Cowork»** (oben)
+3. Klicke links in der Sidebar auf **«Customize»**
+4. Klicke auf **«Browse plugins»**
+5. Klicke auf **«Upload»** (oder «Eigenes Plugin hochladen»)
+6. Navigiere zu deinem Plugin-Ordner vorlage-leer.zip und wähle ihn
+7. Du solltest eine Fehlermeldung sehen, dass das PlugIn auf Grund von "Plugin name must be kebab-case: lowercase letters, numbers, and hyphens (e.g. 'my-plugin')." nicht installierbar ist.
+
+Was das bedeutet:
+In plugin.json steht "name": "HIER-PLUGIN-NAME" — die Grossbuchstaben verletzen die kebab-case-Regel. Cowork akzeptiert nur Kleinbuchstaben, Zahlen und Bindestriche.
+
+Wie kannst du das beheben?
+1. Öffne im Explorer claude.ai
+2. kopiere einen Screenshot der Fehlermeldung und Frage um Rat
+tip: du kannst bei Claude.ai ganze .zip files hochladen und claude bitten es anzupassen
+3. Wenn dir der Tip nicht geholfen hat, mache konkret Folgendes:
+Lade die Datei vorlage-leer.zip in den Chat, zusammen mit folgendem Text: "bitte prüfe wo das problem liegt"
+Claude wird das Problem finden: "Da ist das Problem: In plugin.json steht "name": "HIER-PLUGIN-NAME"" und dich fragen ob er das Problem beheben soll. Nehme den Vorschlag an, lasse Claude eine neue .zip datei erstellen, und starte nun nochmals den Versuch diese als Plug-In zu installieren
+
+
+# Schritt 4_0: Prework - Probleme selber lösen - erfolgreich beendet :)
+
 # Schritt 4: Eigenen Agent bauen
 
 > **Dauer:** ca. 15 Minuten  
