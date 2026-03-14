@@ -114,29 +114,6 @@ ERGEBNIS: Sauberer Ordner + Inventarliste + Warnungen
 
 ---
 
-## Für Workshop-Leitende
-
-### Material verteilen
-
-Jeder Teilnehmende braucht:
-1. `workshop-dateien-chaos.zip` – die 50 Chaos-Dateien
-2. `ordner-aufraeumen-plugin.zip` – das Plugin zum Installieren
-
-Verteile beides per **AirDrop**, **E-Mail**, **USB-Stick** oder **geteiltem Ordner**.
-
-### Ablauf-Empfehlung
-
-| Zeit | Was | Hinweis |
-|------|-----|---------|
-| 0:00 | Ordner mit 50 Dateien auf Beamer zeigen | «So sieht der Desktop eines Anwalts aus» |
-| 2:00 | Plugin-Struktur erklären (5 Dateien, alle Textdateien) | README Diagramm zeigen |
-| 5:00 | Teilnehmende installieren das Plugin | Gemeinsam: Customize → Upload |
-| 10:00 | Erster Test: «Sortiere diesen Ordner» | Live auf dem Beamer zeigen |
-| 15:00 | Ergebnis ansehen: Ordnerstruktur + Inventarliste | Wow-Effekt: 50 Dateien in Minuten |
-| 20:00 | Geplante Aufgabe einrichten mit /schedule | «Jeden Freitag automatisch» |
-| 25:00 | Diskussion: Welche Ordner würdet ihr sortieren lassen? | Transfer in den Alltag |
-| 30:00 | Ausblick: Welche anderen Agents könnte man bauen? | Ideen sammeln |
-
 ### Mögliche Fragen der Teilnehmenden
 
 | Frage | Antwort |
