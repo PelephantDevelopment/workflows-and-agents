@@ -20,7 +20,7 @@ Ohne Skill sagst du jedes Mal:
 Mit Skill sagst du:
 > *«Räume diesen Ordner auf.»*
 
-Claude erkennt, dass der Skill passt, und befolgt die hinterlegte Anleitung. Du schreibst die lange Anweisung einmal – und nutzt sie immer wieder.
+Claude erkennt, dass der Skill passt, und befolgt die hinterlegte Anleitung. Du schreibst die lange Anweisung einmal – und nutzt sie immer wieder, inklusive Zugriff auf das lokale Dateisystem.
 
 ---
 
