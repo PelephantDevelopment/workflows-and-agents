@@ -29,7 +29,7 @@ Das ist die zentrale Erkenntnis dieses Schritts. Kein Programm. Keine Datenbank.
 So sieht ein Plugin aus, wenn du es im Datei-Explorer öffnest:
 
 ```
-mein-agent/
+vorlage-leer/
 ├── .claude-plugin/
 │   └── plugin.json        ← 1 Datei
 ├── skills/
